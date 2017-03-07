@@ -1,6 +1,7 @@
 # React-Redux-Firebase Boilerplate 
 
-![alt tag](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt tag](https://github.com/RyszardRzepa/React-Redux-Firebase-Boilerplate/blob/master/assets/Home.png)
+![alt tag](https://github.com/RyszardRzepa/React-Redux-Firebase-Boilerplate/blob/master/assets/login.png)
 
 #### Thanks to React-static-boilerplate
 

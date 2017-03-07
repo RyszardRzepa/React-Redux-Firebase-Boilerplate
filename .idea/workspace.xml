@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83302c49-5fc6-4dc3-a774-77cd70517871" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Footer/footer.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/actions/auth.js" afterPath="$PROJECT_DIR$/src/actions/auth.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/actions/types/index.js" afterPath="$PROJECT_DIR$/src/actions/types/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Button/Button.js" afterPath="$PROJECT_DIR$/src/components/Button/Button.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Button/README.md" afterPath="$PROJECT_DIR$/src/components/Button/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Button/package.json" afterPath="$PROJECT_DIR$/src/components/Button/package.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Footer/Footer.js" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Footer/package.json" afterPath="$PROJECT_DIR$/src/components/Footer/package.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Layout/Header.css" afterPath="$PROJECT_DIR$/src/components/Layout/Header.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Layout/Header.js" afterPath="$PROJECT_DIR$/src/components/Layout/Header.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Layout/Layout.css" afterPath="$PROJECT_DIR$/src/components/Layout/Layout.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Layout/Layout.js" afterPath="$PROJECT_DIR$/src/components/Layout/Layout.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Layout/Navigation.js" afterPath="$PROJECT_DIR$/src/components/Layout/Navigation.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Layout/package.json" afterPath="$PROJECT_DIR$/src/components/Layout/package.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Link/Link.js" afterPath="$PROJECT_DIR$/src/components/Link/Link.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/Link/package.json" afterPath="$PROJECT_DIR$/src/components/Link/package.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/loginForm/asyncValidate.js" afterPath="$PROJECT_DIR$/src/components/loginForm/asyncValidate.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/loginForm/index.js" afterPath="$PROJECT_DIR$/src/components/loginForm/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/registerUser/asyncValidate.js" afterPath="$PROJECT_DIR$/src/components/registerUser/asyncValidate.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/registerUser/index.js" afterPath="$PROJECT_DIR$/src/components/registerUser/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/recipes/how-to-integrate-material-design-lite.md" afterPath="$PROJECT_DIR$/docs/recipes/how-to-integrate-material-design-lite.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/routing-and-navigation.md" afterPath="$PROJECT_DIR$/docs/routing-and-navigation.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/error/index.js" afterPath="$PROJECT_DIR$/src/pages/error/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/index.js" afterPath="$PROJECT_DIR$/src/pages/home/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/login/index.js" afterPath="$PROJECT_DIR$/src/pages/login/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/register/index.js" afterPath="$PROJECT_DIR$/src/pages/register/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/authReducer.js" afterPath="$PROJECT_DIR$/src/reducers/authReducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes.json" afterPath="$PROJECT_DIR$/src/routes.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,8 +25,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="76">
-                <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <first_editor relative-caret-position="114">
+                <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -366,16 +338,16 @@
       <workItem from="1488486343551" duration="11802000" />
       <workItem from="1488726855476" duration="13728000" />
       <workItem from="1488804107601" duration="11685000" />
-      <workItem from="1488825235101" duration="12063000" />
+      <workItem from="1488825235101" duration="12148000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49278000" />
+    <option name="totallyTimeSpent" value="49363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="703" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24720894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -384,7 +356,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960127" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -831,8 +803,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="76">
-            <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <first_editor relative-caret-position="114">
+            <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
