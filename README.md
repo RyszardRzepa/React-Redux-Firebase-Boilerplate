@@ -1,6 +1,6 @@
 # React-Redux-Firebase Boilerplate 
 
-# Thanks to React-static-boilerplate
+#### Thanks to React-static-boilerplate
 
 [**React Static Boilerplate**] (RSB) is a
 boilerplate and tooling for creating modern stand-alone web applications (aka
