@@ -1,5 +1,7 @@
 # React-Redux-Firebase Boilerplate 
 
+![alt tag](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
 #### Thanks to React-static-boilerplate
 
 [**React Static Boilerplate**] (RSB) is a

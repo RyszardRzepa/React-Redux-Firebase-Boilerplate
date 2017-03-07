@@ -2,7 +2,7 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_START,
   LOGIN_USER_FAIL
-} from '../../actions/types';
+} from '../actions/types';
 
 const INITIAL_STATE = {
   isLoading: false,

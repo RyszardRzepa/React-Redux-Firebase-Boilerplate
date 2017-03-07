@@ -1,14 +1,10 @@
 import React, { PropTypes } from 'react';
 import { Card, CardMedia, CardTitle } from 'material-ui/Card';
 
-import Layout from '../../../components/Layout';
+import Layout from '../../components/Layout';
 import s from './styles.css';
 
 class HomePage extends React.Component {
-
-  componentDidMount() {
-    document.title = title;
-  }
 
   render() {
     return (
@@ -34,8 +30,6 @@ class HomePage extends React.Component {
 const propTypes = {
   articles: PropTypes.arrayOf(PropTypes.shape({
     url: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
   }).isRequired).isRequired,
 };
 

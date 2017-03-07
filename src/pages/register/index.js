@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../../actions/auth';
+import * as actions from '../../actions/auth';
 
 import { Card } from 'material-ui/Card';
-import Layout from '../../../components/Layout';
+import Layout from '../../components/Layout';
 import styles from './styles';
-import UserForm from '../../../components/loginForm';
+import UserForm from '../../components/loginForm';
 
 class Register extends React.Component {
 

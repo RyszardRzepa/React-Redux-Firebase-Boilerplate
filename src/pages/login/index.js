@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import * as actions from '../../../actions/auth';
-import Layout from '../../../components/Layout';
+import * as actions from '../../actions/auth';
+import Layout from '../../components/Layout';
 import styles from './styles';
-import LoginForm from '../../../components/loginForm';
+import LoginForm from '../../components/loginForm';
 import { Card } from 'material-ui/Card';
 
 class Login extends React.Component {

@@ -67,7 +67,7 @@ MDL [source code](https://github.com/google/material-design-lite/tree/mdl-1.x/sr
 component mounts into the DOM, it need to notify MDL runtime that the underlying DOM elements can be
 directly manipulated by MDL; likewise right before the React component is being removed from the DOM
 it needs to notify MDL so it could do proper clean up. MDL provides `upgradeElement(node)` and
-`downgradeElements(nodes)` API methods for that. For example, to implement a [Button](../../components/Button)
+`downgradeElements(nodes)` API methods for that. For example, to implement a [Button](../../src/components/Button)
 component you would write code similar to this:
 
 #### `components/Button/Button.js`
