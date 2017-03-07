@@ -1,6 +1,8 @@
-# React Static Boilerplate &nbsp; <a href="https://travis-ci.org/kriasoft/react-static-boilerplate"><img src="http://img.shields.io/travis/kriasoft/react-static-boilerplate/master.svg?style=flat-square" height="20" /></a> <a href="https://github.com/kriasoft/react-static-boilerplate/stargazers"><img src="https://img.shields.io/github/stars/kriasoft/react-static-boilerplate.svg?style=social&label=Star&maxAge=3600" height="20"></a> <a href="https://twitter.com/ReactStatic"><img src="https://img.shields.io/twitter/follow/ReactStatic.svg?style=social&label=Follow&maxAge=3600" height="20"></a>
+# React-Redux-Firebase Boilerplate 
 
-[**React Static Boilerplate**](https://github.com/kriasoft/react-static-boilerplate) (RSB) is a
+# Thanks to React-static-boilerplate
+
+[**React Static Boilerplate**] (RSB) is a
 boilerplate and tooling for creating modern stand-alone web applications (aka
 [SPA](https://en.wikipedia.org/wiki/Single-page_application)s) for a serverless architecture. RSB
 significantly reduces cost by eliminating the need for servers such as EC2 instances because the
