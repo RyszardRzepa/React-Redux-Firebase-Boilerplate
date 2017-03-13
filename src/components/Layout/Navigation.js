@@ -10,6 +10,8 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Avatar from 'material-ui/Avatar';
+import { List, ListItem } from 'material-ui/List';
 
 import { logoutUser } from '../../actions/auth';
 import Link from '../Link';
@@ -27,29 +29,50 @@ class Navigation extends Component {
   toggleLoginButton() {
     if (!this.props.authenticated) {
       return (
-        <Link className="mdl-navigation__link" to="/login">Login</Link>
+        <nav className="mdl-navigation" ref={node => (this.root = node)}>
+          <Link className="mdl-navigation__link" to="/">Home</Link>
+          <Link className="mdl-navigation__link" to="/login">Login</Link>
+        </nav>
       )
     }
-    return (
-      <Link onClick={() => this.props.logoutUser()} className="mdl-navigation__link" to="/login">Logout</Link>
-    )
-  }
 
-  render() {
-    console.log(this.props.authenticated)
+    const { user, logoutUser } = this.props;
+
     return (
       <nav className="mdl-navigation" ref={node => (this.root = node)}>
         <Link className="mdl-navigation__link" to="/">Home</Link>
-        {this.toggleLoginButton()}
+        <Link onClick={() => logoutUser()} className="mdl-navigation__link" to="/login">Logout</Link>
+        <List>
+          <ListItem
+            style={{color: '#fff'}}
+            primaryText={user.email}
+            leftAvatar={<Avatar src="https://scontent.fosl1-1.fna.fbcdn.net/v/t1.0-1/p160x160/13872659_1350373688323267_5528797744784155072_n.jpg?oh=0afa3ae7c85ca36a0c816d1c4c349c18&oe=596B9EBD"/>}
+          />
+        </List>
       </nav>
     )
   }
 
+  render() {
+    return (
+      <nav className="mdl-navigation" ref={node => (this.root = node)}>
+        {this.toggleLoginButton()}
+      </nav>
+    )
+  }
 }
+
+
+Navigation.propTypes = {
+  user: React.PropTypes.object,
+  authenticated: React.PropTypes.bool
+};
+
 
 function mapStateToProps(state) {
   return {
-    authenticated: state.auth.isAuth
+    authenticated: state.auth.isAuth,
+    user: state.auth.user
   }
 }
 

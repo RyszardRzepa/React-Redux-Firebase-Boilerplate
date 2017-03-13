@@ -29,6 +29,11 @@ class Register extends React.Component {
   }
 }
 
+Register.propTypes = {
+  isLoading: React.PropTypes.bool
+};
+
+
 function mapStateToProps(state) {
   return {
     isLoading: state.auth.isLoading,
