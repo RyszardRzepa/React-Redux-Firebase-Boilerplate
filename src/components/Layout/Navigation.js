@@ -8,10 +8,12 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Link from '../Link';
 
-class Navigation extends React.Component {
+class Navigation extends Component {
 
   componentDidMount() {
     window.componentHandler.upgradeElement(this.root);
@@ -21,15 +23,33 @@ class Navigation extends React.Component {
     window.componentHandler.downgradeElements(this.root);
   }
 
+  toggleLoginButton() {
+    if (!this.props.authenticated) {
+      return (
+        <Link className="mdl-navigation__link" to="/login">Login</Link>
+      )
+    }
+    return (
+      <Link className="mdl-navigation__link" to="/login">Logout</Link>
+    )
+  }
+
   render() {
+    console.log(this.props.authenticated)
     return (
       <nav className="mdl-navigation" ref={node => (this.root = node)}>
         <Link className="mdl-navigation__link" to="/">Home</Link>
-        <Link className="mdl-navigation__link" to="/login">Login</Link>
+        {this.toggleLoginButton()}
       </nav>
-    );
+    )
   }
 
 }
 
-export default Navigation;
+function mapStateToProps(state) {
+  return {
+    authenticated: state.auth.isAuth
+  }
+}
+
+export default connect(mapStateToProps)(Navigation);
