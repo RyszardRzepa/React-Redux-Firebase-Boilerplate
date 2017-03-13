@@ -11,6 +11,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { logoutUser } from '../../actions/auth';
 import Link from '../Link';
 
 class Navigation extends Component {
@@ -30,7 +31,7 @@ class Navigation extends Component {
       )
     }
     return (
-      <Link className="mdl-navigation__link" to="/login">Logout</Link>
+      <Link onClick={() => this.props.logoutUser()} className="mdl-navigation__link" to="/login">Logout</Link>
     )
   }
 
@@ -52,4 +53,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Navigation);
+export default connect(mapStateToProps, { logoutUser })(Navigation);

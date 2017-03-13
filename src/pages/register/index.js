@@ -21,7 +21,7 @@ class Register extends React.Component {
             style={styles.card}
             zDepth={3}
           >
-            <UserForm loading={this.props.isLoading} onSubmit={this.handleSubmit.bind(this)}/>
+            <UserForm authButton="login" loading={this.props.isLoading} onSubmit={this.handleSubmit.bind(this)}/>
           </Card>
         </div>
       </Layout>

@@ -1,7 +1,8 @@
 import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_START,
-  LOGIN_USER_FAIL
+  LOGIN_USER_FAIL,
+  LOGOUT_USER
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -24,6 +25,8 @@ export default function auth(state = INITIAL_STATE, action) {
       return { isLoading: true };
     case LOGIN_USER_FAIL:
       return { ...state, isLoading: false, err: "error during login" };
+    case LOGOUT_USER:
+      return { INITIAL_STATE };
     default:
       return state;
   }
