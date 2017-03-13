@@ -11,7 +11,6 @@ class Login extends React.Component {
 
   handleSubmit = (email, password) => {
     this.props.loginUser(email, password);
-    this.props.resetForm()
   };
 
   render() {

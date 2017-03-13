@@ -8,8 +8,8 @@ const INITIAL_STATE = {
   isLoading: false,
   err: '',
   message: '',
-  email: '',
-  password: ''
+  user: {},
+  isAuth: false
 };
 
 export default function auth(state = INITIAL_STATE, action) {
@@ -18,12 +18,12 @@ export default function auth(state = INITIAL_STATE, action) {
       return {
         ...state,
         user: action.payload,
-        ...INITIAL_STATE
+        isAuth: true
       };
     case LOGIN_USER_START:
       return { isLoading: true };
     case LOGIN_USER_FAIL:
-      return { ...state, isLoading: false, err: action.err };
+      return { ...state, isLoading: false, err: "error during login" };
     default:
       return state;
   }

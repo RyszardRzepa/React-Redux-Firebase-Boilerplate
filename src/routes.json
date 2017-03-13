@@ -21,6 +21,10 @@
     "page": "./pages/register"
   },
   {
+    "path": "/profile",
+    "page": "./pages/userProfile"
+  },
+  {
     "path": "/tasks/:status(pending|completed)?",
     "page": "./pages/home"
   }

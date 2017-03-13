@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component  } from 'react';
 import { Card, CardMedia, CardTitle } from 'material-ui/Card';
 
 import Layout from '../../components/Layout';
 import s from './styles.css';
 
-class HomePage extends React.Component {
+class HomePage extends Component {
 
   render() {
     return (

@@ -16,11 +16,11 @@ let routes = require('./routes.json').default; // Loaded with utils/routes-loade
 const container = document.getElementById('container');
 
 const config = {
-  apiKey: "AIzaSyCUt6T4Tr_nuHmyb22latXjj6_9yhXwJmM",
-  authDomain: "gifreact.firebaseapp.com",
-  databaseURL: "https://gifreact.firebaseio.com",
-  storageBucket: "gifreact.appspot.com",
-  messagingSenderId: "388776106601"
+  apiKey: "AIzaSyCsruSl5Su_tqEfdY8RuqRl54QgWVoacEA",
+  authDomain: "reactnative-auth-fdfb4.firebaseapp.com",
+  databaseURL: "https://reactnative-auth-fdfb4.firebaseio.com",
+  storageBucket: "reactnative-auth-fdfb4.appspot.com",
+  messagingSenderId: "177624070215"
 };
 firebase.initializeApp(config);
 

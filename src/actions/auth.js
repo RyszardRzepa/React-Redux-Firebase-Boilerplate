@@ -1,4 +1,6 @@
 import firebase from 'firebase';
+import history from '../history';
+
 import { LOGIN_USER_START, LOGIN_USER_FAIL, LOGIN_USER_SUCCESS } from './types';
 
 export function loginUser(email, password) {
@@ -7,6 +9,7 @@ export function loginUser(email, password) {
 
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then((user) => dispatch(loginUserSuccess(user)))
+    .then(() => history.push('/profile'))
     .catch(function(error) {
       dispatch(loginUserFail("error during login"))
       console.log(error)
@@ -31,13 +34,13 @@ export function createUser(email, password) {
 const loginUserSuccess = (user)  => {
   return {
     type: LOGIN_USER_SUCCESS,
-    user
+    payload: user
   }
 }
 
 const loginUserFail = (err) => {
   return {
     type: LOGIN_USER_FAIL,
-    err
+    payload: err
   }
 }

@@ -8,12 +8,12 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import Navigation from './Navigation';
 import Link from '../Link';
 import s from './Header.css';
 
-class Header extends React.Component {
+class Header extends Component {
 
   componentDidMount() {
     window.componentHandler.upgradeElement(this.root);
