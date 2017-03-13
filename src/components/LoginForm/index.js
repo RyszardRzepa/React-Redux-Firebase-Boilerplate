@@ -37,7 +37,8 @@ class MaterialUiForm extends Component {
 
   renderLoader() {
     if (this.props.loading) {
-      return <div style={{
+      return <div
+        style={{
         display: 'flex',
         justifyContent: 'center'
       }}>
@@ -57,7 +58,7 @@ class MaterialUiForm extends Component {
   }
 
   render() {
-    const { handleSubmit, onSubmit } = this.props;
+    const { handleSubmit, onSubmit, authButton } = this.props;
     return (
       <form onSubmit={handleSubmit(({ email, password }) => onSubmit(email, password))}>
         <div>
@@ -68,7 +69,7 @@ class MaterialUiForm extends Component {
         </div>
         {this.renderLoader()}
         <div style={{ paddingTop: 20 }}>
-          <Link style={{ fontSize: 13 }} to="/register">or register</Link>
+          <Link style={{ fontSize: 13 }} to={`/${authButton}`}>{authButton}</Link>
         </div>
       </form>
     )

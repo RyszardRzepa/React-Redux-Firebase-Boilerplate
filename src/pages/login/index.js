@@ -21,7 +21,7 @@ class Login extends React.Component {
             style={styles.card}
             zDepth={3}
           >
-            <LoginForm loading={this.props.isLoading} onSubmit={this.handleSubmit.bind(this)}/>
+            <LoginForm authButton="register" loading={this.props.isLoading} onSubmit={this.handleSubmit.bind(this)}/>
           </Card>
         </div>
       </Layout>
