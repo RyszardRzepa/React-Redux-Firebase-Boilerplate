@@ -29,6 +29,11 @@ class Login extends React.Component {
   }
 }
 
+Login.propTypes = {
+  isLoading: React.PropTypes.bool
+};
+
+
 function mapStateToProps(state) {
   return {
     isLoading: state.auth.isLoading,
