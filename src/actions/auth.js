@@ -1,14 +1,21 @@
 import firebase from 'firebase';
 import history from '../history';
 
-import { LOGIN_USER_START, LOGIN_USER_FAIL, LOGIN_USER_SUCCESS,LOGOUT_USER } from './types';
+import { LOGIN_USER_START, LOGIN_USER_FAIL, LOGIN_USER_SUCCESS, LOGOUT_USER } from './types';
 
 export function loginUser(email, password) {
   return (dispatch) => {
     dispatch({ type: LOGIN_USER_START });
 
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((user) => dispatch(loginUserSuccess(user)))
+    .then((user) => {
+      dispatch(loginUserSuccess(user));
+      localStorage.setItem('userEmail', user.email);
+    })
+    .then(() => {
+      firebase.auth().currentUser.getToken()
+      .then((idToken) => localStorage.setItem('token', idToken))
+    })
     .then(() => history.push('/profile'))
     .catch(function (error) {
       dispatch(loginUserFail("error during login"))
@@ -33,9 +40,10 @@ export function createUser(email, password) {
 export function logoutUser() {
   return (dispatch) => {
     firebase.auth().signOut()
-    .then(() => dispatch({
-      type: LOGOUT_USER
-    }))
+    .then(() => {
+      dispatch({ type: LOGOUT_USER });
+      localStorage.clear();
+    })
     .then(() => history.push('/'))
   }
 }
