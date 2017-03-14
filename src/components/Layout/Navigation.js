@@ -12,6 +12,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Avatar from 'material-ui/Avatar';
 import { List, ListItem } from 'material-ui/List';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import IconButton from 'material-ui/IconButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 import { logoutUser } from '../../actions/auth';
 import Link from '../Link';
@@ -26,6 +30,18 @@ class Navigation extends Component {
     window.componentHandler.downgradeElements(this.root);
   }
 
+  renderIconMenu() {
+    return (
+      <IconMenu iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+                anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+                targetOrigin={{horizontal: 'left', vertical: 'top'}}
+      >
+        <MenuItem primaryText="Settings"/>
+        <MenuItem primaryText="Sign out"/>
+      </IconMenu>
+    )
+  }
+
   toggleLoginButton() {
     if (!this.props.authenticated) {
       return (
@@ -36,17 +52,18 @@ class Navigation extends Component {
       )
     }
 
-    const { user, logoutUser } = this.props;
-
+    const { logoutUser } = this.props;
+    const userEmail = localStorage.getItem('userEmail');
     return (
       <nav className="mdl-navigation" ref={node => (this.root = node)}>
         <Link className="mdl-navigation__link" to="/">Home</Link>
-        <Link onClick={() => logoutUser()} className="mdl-navigation__link" to="/login">Logout</Link>
+        <Link onClick={() => logoutUser()} className="mdl-navigation__link" to="/">Logout</Link>
         <List>
           <ListItem
-            style={{color: '#fff'}}
-            primaryText={user.email}
-            leftAvatar={<Avatar src="https://scontent.fosl1-1.fna.fbcdn.net/v/t1.0-1/p160x160/13872659_1350373688323267_5528797744784155072_n.jpg?oh=0afa3ae7c85ca36a0c816d1c4c349c18&oe=596B9EBD"/>}
+            onTouchStart={this.renderIconMenu()}
+            style={{ color: '#fff', paddingBottom: 10 }}
+            leftAvatar={<Avatar
+              src="https://scontent.fosl1-1.fna.fbcdn.net/v/t1.0-1/p160x160/13872659_1350373688323267_5528797744784155072_n.jpg?oh=0afa3ae7c85ca36a0c816d1c4c349c18&oe=596B9EBD"/>}
           />
         </List>
       </nav>
