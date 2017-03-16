@@ -16,9 +16,23 @@
 
 .content {
   margin: auto;
-  padding: 20px;
-  max-width: 800px;
-  width: 80%;
+  padding: 5px;
+  width: 100%;
+  height: 80%;
+}
+
+html, body, #heroimage{
+  width:100%;
+  height:100%;
+}
+
+#heroimage{
+  background:url('http://placehold.it/1920x1080&text=Hero+Image') center center;
+  background-size:cover;
+}
+
+#content{
+  padding:20px;
 }
 
 .video {

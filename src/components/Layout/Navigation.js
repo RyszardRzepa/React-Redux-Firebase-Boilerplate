@@ -10,6 +10,8 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import history from '../../history';
+
 import Avatar from 'material-ui/Avatar';
 import { List, ListItem } from 'material-ui/List';
 import IconMenu from 'material-ui/IconMenu';
@@ -60,7 +62,8 @@ class Navigation extends Component {
         <Link onClick={() => logoutUser()} className="mdl-navigation__link" to="/">Logout</Link>
         <List>
           <ListItem
-            onTouchStart={this.renderIconMenu()}
+            onTouchTap={() => history.push('/profile')}
+            onTouchStart={() => this.renderIconMenu()}
             style={{ color: '#fff', paddingBottom: 10 }}
             leftAvatar={<Avatar
               src="https://scontent.fosl1-1.fna.fbcdn.net/v/t1.0-1/p160x160/13872659_1350373688323267_5528797744784155072_n.jpg?oh=0afa3ae7c85ca36a0c816d1c4c349c18&oe=596B9EBD"/>}
