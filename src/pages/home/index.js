@@ -1,81 +1,44 @@
-import React, { PropTypes, Component } from 'react';
-import { Card, CardMedia, CardTitle } from 'material-ui/Card';
-import { connect } from 'react-redux';
+import React from 'react';
+import { Flex, Box, Grid } from 'reflexbox'
+import { Card } from 'material-ui/Card';
 
-import { addImage } from '../../actions/fileUpload';
+import Post from '../../components/Post';
 import Layout from '../../components/Layout';
-import s from './styles.css';
 
-class HomePage extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = { file: {} };
-  }
-
-  _handleSubmit(e) {
-    e.preventDefault();
-
-    console.log('handle uploading-', this.state.file);
-    this.props.addImage(this.state.file);
-  }
-
-  _handleImageChange(e) {
-    e.preventDefault();
-
-    let reader = new FileReader();
-    let file = e.target.files[0];
-
-    reader.onloadend = () => {
-      this.setState({
-        file: file,
-      });
-    }
-    reader.readAsDataURL(file)
-  }
-
-  render() {
-    return (
-      <Layout className={s.content}>
-        <Card
-          zDepth={3}>
-          <CardMedia
-            overlayContentStyle={styles}
-            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle"/>}
+const UserProfile = (props) => {
+  return (
+    <Layout>
+      <Flex
+        align="center"
+      >
+        <Box
+          style={styles.red}
+          auto
+          ml={4}
+          mr={4}
+          mt={1}
+          md={8}
+        >
+          <Card
+            zDepth={3}
           >
-            <video id="background-video" muted loop autoPlay>
-
-            </video>
-          </CardMedia>
-        </Card>
-        <form onSubmit={(e) => this._handleSubmit(e)}>
-          <input className="fileInput"
-                 type="file"
-                 onChange={(e) => this._handleImageChange(e)}/>
-          <button className="submitButton"
-                  type="submit"
-                  onClick={(e) => this._handleSubmit(e)}>Upload Image
-          </button>
-        </form>
-        {console.log(this.props.currentUser)}
-      </Layout>
-    );
-  }
+            <iframe
+              width="100%" height="500"
+              src="https://www.youtube.com/embed/dDbPwLODAx0?modestbranding=1&autoplay=0&showinfo=0&controls=0">
+            </iframe>
+          </Card>
+        </Box>
+      </Flex>
+      <Post />
+    </Layout>
+  )
 }
-
-const propTypes = {
-
-};
 
 const styles = {
-  height: "100%",
-  paddingTop: 0
+  red: {
+    maxHeight: 500
+  },
+  green: {}
 }
+export default (UserProfile);
 
-function mapStateToProps(state) {
-  return {
-    currentUser: state.auth.user
-  }
-}
-
-export default connect(mapStateToProps, { addImage })(HomePage);

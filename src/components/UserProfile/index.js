@@ -1,45 +1,80 @@
-import React from 'react';
-import { Flex, Box, Grid } from 'reflexbox'
-import { Card } from 'material-ui/Card';
+import React, { PropTypes, Component } from 'react';
+import { Card, CardMedia, CardTitle } from 'material-ui/Card';
+import { connect } from 'react-redux';
 
-import Post from '../../components/Post';
-import Layout from '../Layout';
+import { addImage } from '../../actions/userActions';
+import Layout from '../../components/Layout';
+import s from './styles.css';
 
-const UserProfile = (props) => {
-  return (
-    <Layout>
-      <Flex
-        align="center"
-      >
-        <Box
-          style={styles.red}
-          auto
-          ml={4}
-          mr={4}
-          mt={1}
-          md={8}
-        >
-          <Card
-            zDepth={3}
+class HomePage extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { file: {} };
+
+  }
+
+  _handleSubmit(e) {
+    e.preventDefault();
+    const uid = this.props.currentUser.uid;
+
+    console.log('handle uploading-', this.state.file, uid);
+    this.props.addImage(this.state.file, uid);
+  }
+
+  _handleImageChange(e) {
+    e.preventDefault();
+
+    let reader = new FileReader();
+    let file = e.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+      });
+    }
+    reader.readAsDataURL(file)
+  }
+
+  render() {
+    return (
+      <Layout className={s.content}>
+        <Card
+          zDepth={3}>
+          <CardMedia
+            overlayContentStyle={styles}
+            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle"/>}
           >
-            <iframe
-              width="100%" height="500"
-              src="https://www.youtube.com/embed/dDbPwLODAx0?modestbranding=1&autoplay=0&showinfo=0&controls=0">
-            </iframe>
-          </Card>
-        </Box>
-      </Flex>
-      <Post />
-    </Layout>
-  )
-}
+            <video id="background-video" muted loop autoPlay>
 
-const styles = {
-  red: {
-    maxHeight: 500
-  },
-  green: {
-    backgroundColor: 'green',
+            </video>
+          </CardMedia>
+        </Card>
+        <form onSubmit={(e) => this._handleSubmit(e)}>
+          <input className="fileInput"
+                 type="file"
+                 onChange={(e) => this._handleImageChange(e)}/>
+          <button className="submitButton"
+                  type="submit"
+                  onClick={(e) => this._handleSubmit(e)}>Upload Image
+          </button>
+        </form>
+      </Layout>
+    );
   }
 }
-export default (UserProfile);
+
+const propTypes = {};
+
+const styles = {
+  height: "100%",
+  paddingTop: 0
+}
+
+function mapStateToProps(state) {
+  return {
+    currentUser: state.auth.user,
+  }
+}
+
+export default connect(mapStateToProps, { addImage })(HomePage);
