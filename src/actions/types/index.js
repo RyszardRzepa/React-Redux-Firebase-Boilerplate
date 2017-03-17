@@ -2,3 +2,5 @@ export const LOGIN_USER_START = 'LOGIN_USER_START';
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
 export const LOGIN_USER_FAIL = 'LOGIN_USER_FAIL';
 export const LOGOUT_USER = 'LOGOUT_USER';
+export const FILE_UPLOAD = 'FILE_UPLOAD';
+export const LOAD_USER_DATA = 'LOAD_USER_DATA';

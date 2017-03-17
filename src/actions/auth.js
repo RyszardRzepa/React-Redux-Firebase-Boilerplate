@@ -10,11 +10,6 @@ export function loginUser(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then((user) => {
       dispatch(loginUserSuccess(user));
-      localStorage.setItem('userEmail', user.email);
-    })
-    .then(() => {
-      firebase.auth().currentUser.getToken()
-      .then((idToken) => localStorage.setItem('token', idToken))
     })
     .then(() => history.push('/profile'))
     .catch(function (error) {

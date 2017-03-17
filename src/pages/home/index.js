@@ -1,10 +1,38 @@
-import React, { PropTypes, Component  } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { Card, CardMedia, CardTitle } from 'material-ui/Card';
+import { connect } from 'react-redux';
 
+import { addImage } from '../../actions/fileUpload';
 import Layout from '../../components/Layout';
 import s from './styles.css';
 
 class HomePage extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { file: {} };
+  }
+
+  _handleSubmit(e) {
+    e.preventDefault();
+
+    console.log('handle uploading-', this.state.file);
+    this.props.addImage(this.state.file);
+  }
+
+  _handleImageChange(e) {
+    e.preventDefault();
+
+    let reader = new FileReader();
+    let file = e.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+      });
+    }
+    reader.readAsDataURL(file)
+  }
 
   render() {
     return (
@@ -16,21 +44,27 @@ class HomePage extends Component {
             overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle"/>}
           >
             <video id="background-video" muted loop autoPlay>
-              <source src="http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4" />
-                <source src="http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/ogg" />
+
             </video>
           </CardMedia>
         </Card>
+        <form onSubmit={(e) => this._handleSubmit(e)}>
+          <input className="fileInput"
+                 type="file"
+                 onChange={(e) => this._handleImageChange(e)}/>
+          <button className="submitButton"
+                  type="submit"
+                  onClick={(e) => this._handleSubmit(e)}>Upload Image
+          </button>
+        </form>
+        {console.log(this.props.currentUser)}
       </Layout>
     );
   }
-
 }
 
 const propTypes = {
-  articles: PropTypes.arrayOf(PropTypes.shape({
-    url: PropTypes.string.isRequired,
-  }).isRequired).isRequired,
+
 };
 
 const styles = {
@@ -38,4 +72,10 @@ const styles = {
   paddingTop: 0
 }
 
-export default HomePage;
+function mapStateToProps(state) {
+  return {
+    currentUser: state.auth.user
+  }
+}
+
+export default connect(mapStateToProps, { addImage })(HomePage);
