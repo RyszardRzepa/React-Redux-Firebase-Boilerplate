@@ -19,7 +19,6 @@ export default function auth(state = INITIAL_STATE, action) {
       return {
         ...state,
         user: action.payload,
-        isAuth: true
       };
     case LOGIN_USER_START:
       return { isLoading: true };

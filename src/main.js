@@ -10,6 +10,7 @@ import firebase from 'firebase';
 import store from './store';
 import router from './router';
 import history from './history';
+import { LOGIN_USER_SUCCESS } from './actions/types';
 
 let routes = require('./routes.json').default; // Loaded with utils/routes-loader.js
 
@@ -22,7 +23,9 @@ const config = {
   storageBucket: "reactnative-auth-fdfb4.appspot.com",
   messagingSenderId: "177624070215"
 };
+
 firebase.initializeApp(config);
+firebase.auth().onAuthStateChanged((user) => store.dispatch({ type: LOGIN_USER_SUCCESS, payload: user }));
 
 function renderComponent(component) {
   ReactDOM.render(<Provider store={store}>{component}</Provider>, container);

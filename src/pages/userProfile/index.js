@@ -7,8 +7,8 @@ import Layout from '../../components/Layout';
 class User_Profile extends Component {
 
   render() {
-    const { user, authenticated } = this.props;
-    if (authenticated) {
+    const { user } = this.props;
+    if (user) {
       return <UserProfile user={user} />
     }
     return (
@@ -24,13 +24,11 @@ class User_Profile extends Component {
 
 UserProfile.propTypes = {
   user: React.PropTypes.object,
-  authenticated: React.PropTypes.bool
 };
 
 
 function mapStateToProps(state) {
   return {
-    authenticated: state.auth.isAuth,
     user: state.auth.user
   }
 
